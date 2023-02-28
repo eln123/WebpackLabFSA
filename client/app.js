@@ -1,19 +1,19 @@
 const winnerText = document.getElementById("winner");
 const leftoversBtn = document.getElementById("leftovers");
 const takeoutBtn = document.getElementById("takeout");
+import { getWinner, voteLeftovers, voteTakeout } from "./score.js";
 
 const updateWinner = () => {
-	const currWinner = getWinner();
-	winnerText.innerText = currWinner;
+  const currWinner = getWinner();
+  winnerText.innerText = currWinner;
 };
 
 takeoutBtn.addEventListener("click", () => {
-	voteTakeout();
-	updateWinner();
+  voteTakeout();
+  updateWinner();
 });
 
 leftoversBtn.addEventListener("click", () => {
-	voteLeftovers();
-	updateWinner();
+  voteLeftovers();
+  updateWinner();
 });
-
